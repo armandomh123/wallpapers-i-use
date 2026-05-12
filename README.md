@@ -1,12 +1,12 @@
-# 📸 Wallpapers Collection
+# Wallpapers Collection
 
-Una colección curada de fondos de pantalla de alta calidad para tu escritorio.
+A list of wallpapers I have installed in my PC. Mostly obtained from Wallhaven. Credits to their respective creators.
 
 ---
 
-## 🖼️ Galería de Fondos
+## Gallery
 
-Haz clic en cualquier miniatura para ver la imagen en tamaño completo:
+Click any image to see it in full size.
 
 | | | |
 |---|---|---|
@@ -51,56 +51,3 @@ Haz clic en cualquier miniatura para ver la imagen en tamaño completo:
 | [![wallhaven_yjylwl.jpg](thumbnails/thumb_wallhaven_yjylwl.jpg)](wallhaven_yjylwl.jpg) | [![wallhaven_ymdvjg.jpg](thumbnails/thumb_wallhaven_ymdvjg.jpg)](wallhaven_ymdvjg.jpg) | [![wallhaven_ymrdqd.jpg](thumbnails/thumb_wallhaven_ymrdqd.jpg)](wallhaven_ymrdqd.jpg) |
 | [![wallhaven_yqg2og.jpg](thumbnails/thumb_wallhaven_yqg2og.jpg)](wallhaven_yqg2og.jpg) | [![wallhaven_yx7rd7.jpg](thumbnails/thumb_wallhaven_yx7rd7.jpg)](wallhaven_yx7rd7.jpg) | [![wallhaven_zpoo3w.jpg](thumbnails/thumb_wallhaven_zpoo3w.jpg)](wallhaven_zpoo3w.jpg) |
 | [![wallhaven_zyqx1v.jpg](thumbnails/thumb_wallhaven_zyqx1v.jpg)](wallhaven_zyqx1v.jpg) | [![wallhaven_zyxvqy.jpg](thumbnails/thumb_wallhaven_zyxvqy.jpg)](wallhaven_zyxvqy.jpg) | |
-
----
-
-## 📊 Información
-
-| Métrica | Valor |
-|---------|-------|
-| **Total de fondos** | 128 |
-| **Resolución miniaturas** | 300x300 px |
-| **Resolución máxima** | Varía por imagen |
-| **Última actualización** | 11/05/2026 |
-
----
-
-## 🚀 Cómo usar
-
-1. **Explorar**: Desplázate por la galería de arriba
-2. **Seleccionar**: Elige un fondo que te guste
-3. **Descargar**: Haz clic en la miniatura para ver la imagen en resolución completa
-4. **Establecer**: Usa como fondo de pantalla en tu sistema:
-   - **Linux**: Click derecho → Establecer como fondo de pantalla
-   - **Windows**: Click derecho → Establecer como fondo de pantalla
-   - **macOS**: Preferencias del sistema → Escritorio
-
----
-
-## 📁 Estructura del repositorio
-
-```
-wallpapers/
-├── README.md                  # Este archivo
-├── thumbnails/               # Miniaturas (300x300px)
-│   ├── thumb_*.jpg
-│   ├── thumb_*.png
-│   └── ...
-└── wallhaven_*.jpg|png       # Imágenes en resolución completa
-```
-
----
-
-## 💡 Recomendaciones
-
-- Las imágenes están en varios formatos (JPG, PNG)
-- Se recomienda usar imágenes con la resolución de tu pantalla
-- Para pantallas 4K, busca las imágenes con mayor resolución
-
----
-
-## 📝 Notas
-
-- Todas las imágenes provienen de fuentes de acceso libre
-- Se proporcionan tal cual, sin ninguna garantía
-- Siéntete libre de compartir esta colección
