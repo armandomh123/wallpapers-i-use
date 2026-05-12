@@ -20,22 +20,28 @@ def needs_update(source: Path, thumbnail: Path) -> bool:
 
 def generate_thumbnail(source: Path, thumbnail: Path) -> None:
     thumbnail.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(
-        [
-            "magick",
-            str(source),
-            "-resize",
-            THUMBNAIL_SIZE,
-            "-background",
-            "white",
-            "-gravity",
-            "center",
-            "-extent",
-            THUMBNAIL_SIZE,
-            str(thumbnail),
-        ],
-        check=True,
-    )
+    for command in ("magick", "convert"):
+        try:
+            subprocess.run(
+                [
+                    command,
+                    str(source),
+                    "-resize",
+                    THUMBNAIL_SIZE,
+                    "-background",
+                    "white",
+                    "-gravity",
+                    "center",
+                    "-extent",
+                    THUMBNAIL_SIZE,
+                    str(thumbnail),
+                ],
+                check=True,
+            )
+            return
+        except FileNotFoundError:
+            continue
+    raise FileNotFoundError("ImageMagick not found. Install 'magick' or 'convert'.")
 
 
 def main() -> int:
