@@ -11,8 +11,6 @@ on:
       - "**/*.gif"
       - "**/*.webp"
       - "scripts/generate_thumbnails.py"
-    paths-ignore:
-      - "thumbnails/**"
   workflow_dispatch:
 
 jobs:
