@@ -41,7 +41,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet; then
-            git add thumbnails/
+            git add thumbnails/ README.md
             git commit -m "chore: update thumbnails"
             git push
           else

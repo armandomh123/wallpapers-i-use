@@ -44,6 +44,41 @@ def generate_thumbnail(source: Path, thumbnail: Path) -> None:
     raise FileNotFoundError("ImageMagick not found. Install 'magick' or 'convert'.")
 
 
+def write_readme(sources: list[Path]) -> None:
+    rows = []
+    for index, source in enumerate(sources):
+        if index % 3 == 0:
+            rows.append([])
+        rows[-1].append(
+            f"[![{source.name}](thumbnails/thumb_{source.name})]({source.name})"
+        )
+
+    for row in rows:
+        while len(row) < 3:
+            row.append("")
+
+    lines = [
+        "# Wallpapers Collection",
+        "",
+        "A list of wallpapers I have installed in my PC. Mostly obtained from Wallhaven. Credits to their respective creators.",
+        "",
+        "---",
+        "",
+        "## Gallery",
+        "",
+        "Click any image to see it in full size.",
+        "",
+        "| | | |",
+        "|---|---|---|",
+    ]
+
+    for row in rows:
+        lines.append("| " + " | ".join(row) + " |")
+
+    readme_path = Path("README.md")
+    readme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent
     os.chdir(repo_root)
@@ -74,6 +109,8 @@ def main() -> int:
             updated=updated, skipped=skipped, failures=failures
         )
     )
+
+    write_readme(sources)
     return 1 if failures else 0
 
 
