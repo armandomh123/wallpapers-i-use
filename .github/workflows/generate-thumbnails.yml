@@ -1,0 +1,51 @@
+name: Generate thumbnails
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.jpg"
+      - "**/*.jpeg"
+      - "**/*.png"
+      - "**/*.gif"
+      - "**/*.webp"
+      - "scripts/generate_thumbnails.py"
+    paths-ignore:
+      - "thumbnails/**"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate thumbnails
+        run: python3 scripts/generate_thumbnails.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git add thumbnails/
+            git commit -m "chore: update thumbnails"
+            git push
+          else
+            echo "No changes to commit."
+          fi
